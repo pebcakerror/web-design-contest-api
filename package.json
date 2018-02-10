@@ -1,7 +1,7 @@
 {
   "name": "webdesigncontest-api",
   "version": "0.0.1",
-  "description": "Simple API for SkillsUSA & WebProfessionals.org's Web Design & Development Contest.",
+  "description": "Simple Restify API for WebProfessionals.org Web Design & Development Contest",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
