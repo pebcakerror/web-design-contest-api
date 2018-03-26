@@ -1,12 +1,14 @@
-var restify = require('restify');
+const restify = require('restify');
+const events = require('./data/events')
 
-function respond(req, res, next) {
-  res.send('hello ' + req.params.name);
+const server = restify.createServer();
+
+
+server.get('events', (req, res, next) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(events);
   next();
-}
-
-var server = restify.createServer();
-server.get('/hello/:name', respond);
+});
 
 server.listen(60606, function() {
   console.log('%s listening at %s', server.name, server.url);
