@@ -12,6 +12,6 @@
   "author": "Jonathan Worent <jonathan@inspiredbytes.net>",
   "license": "MIT",
   "dependencies": {
-    "restify": "^6.3.4"
+    "express": "^4.16.3"
   }
 }

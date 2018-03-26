@@ -1,15 +1,12 @@
-const restify = require('restify');
-const events = require('./data/events')
+const express = require('express');
+const events = require('./data/events');
 
-const server = restify.createServer();
+const server = express();
 
 
-server.get('events', (req, res, next) => {
+server.get('/events', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.send(events);
-  next();
 });
 
-server.listen(60606, function() {
-  console.log('%s listening at %s', server.name, server.url);
-});
+server.listen(60606, () => console.log('listening on port 60606'));
