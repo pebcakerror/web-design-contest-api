@@ -8,7 +8,7 @@ module.exports = [
       state_abbr: "IL",
       zip: "61616"
     },
-    date: "Aug. 3, 2018",
+    date: "Aug. 3, 2019",
     time: "7:00 PM"
   },
   {
@@ -20,7 +20,7 @@ module.exports = [
       state_abbr: "IL",
       zip: "61615"
     },
-    date: "Sep. 7, 2018",
+    date: "Sep. 7, 2019",
     time: "7:00 PM"
   },
   {
@@ -32,7 +32,7 @@ module.exports = [
       state_abbr: "IL",
       zip: "61606"
     },
-    date: "Oct. 5, 2018",
+    date: "Oct. 5, 2019",
     time: "6:30 PM"
   },
   {
@@ -44,7 +44,7 @@ module.exports = [
       state_abbr: "IL",
       zip: "61614"
     },
-    date: "Nov. 5, 2018",
+    date: "Nov. 5, 2019",
     time: "7:15 PM"
   }
 ]
