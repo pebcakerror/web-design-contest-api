@@ -1,13 +1,13 @@
 {
   "name": "webdesigncontest-api",
   "version": "0.0.1",
-  "description": "Simple Restify API for WebProfessionals.org Web Design & Development Contest",
+  "description": "Simple Rest API for WebProfessionals.org Web Design & Development Contest",
   "repository": "https://github.com/pebcakerror/web-design-contest-api",
   "homepage": "https://www.webdesigncontest.org",
-  "main": "server.js",
+  "main": "app/index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node app/index.js",
+    "dev": "nodemon app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jonathan Worent <jonathan@inspiredbytes.net>",
