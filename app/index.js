@@ -37,45 +37,28 @@ server.use(function(req, res, next) {
  *         console.log(error);
  *     });
  *
- * @apiSuccess {Object[]}   response               List of Locations
+ * @apiSuccess {Object[]}   response                    List of Locations
  * @apiSuccess {String}     response.name               Location Name
- * @apiSuccess {Object}     response.address            Address data (example for an Object)
- * @apiSuccess {String}     response.address.street     Street
- * @apiSuccess {String}     response.address.city       City
- * @apiSuccess {String}     response.address.state      State - Full Name
- * @apiSuccess {String}     response.address.state_abbr State - 2-letter Abbreviation
- * @apiSuccess {String}     response.address.zip        5-digit Zipcode
+ * @apiSuccess {String}     response.location           Description of location 
  * @apiSuccess {String}     response.date               Date (as a preformated string)
  * @apiSuccess {String}     response.time               Time (as a preformated string)
  *
  * @apiSuccessExample Success-Response:
- *     HTTP/1.1 200 OK
- *     [
- *       {
- *         name: "Location 1",
- *         address: {
- *         street:  "3861 Forest Ln",
- *         city: "Hartford",
- *         state: "Louisiana",
- *         state_abbr: "LA",
- *         zip: "17951"
- *       },
- *       date: "Aug. 3, 2018",
- *       time: "7:00 PM"
- *     },
- *     {
- *       name: "Location 2",
- *       address: {
- *         street:  "2655 E Sandy Lake Rd",
- *         city: "Victorville",
- *         state: "Michigan,
- *         state_abbr: "MI",
- *         zip: "22245"
- *       },
- *       date: "Aug. 3, 2018",
- *       time: "7:00 PM"
- *     }
- *   ]
+ *    HTTP/1.1 200 OK
+ *    [
+ *      {
+ *        name: "Location 1",
+ *        location: "10st & Lincoln Ave",
+ *        date: "Jun 5",
+ *        time: "11 AM - 1:30 PM"
+ *      },
+ *      {
+ *        name: "Location 2",
+ *        location: "Glen Park Fountain",
+ *        date: "Jun 6",
+ *        time: "5 PM - 10 PM"
+ *      }
+ *    ]
  */
 function getEvents(req, res) {
   res.setHeader('Content-Type', 'application/json');
