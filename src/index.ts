@@ -2,6 +2,7 @@ import { Hono } from 'hono'
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { swaggerUI } from '@hono/swagger-ui'
 import { z } from 'zod'
+import { events } from './data/events'
 
 // Create a new Hono app with OpenAPI support
 const app = new OpenAPIHono()
@@ -17,7 +18,7 @@ const EventSchema = z.object({
 // Define the API routes with OpenAPI documentation
 app.openapi(
   {
-    path: '/events',
+    path: '/api/events',
     method: 'get',
     tags: ['Events'],
     summary: 'Get upcoming events',
@@ -44,30 +45,21 @@ app.openapi(
     }
   },
   (c) => {
-    // Sample data - replace with your actual data source
-    const events = [
-      {
-        name: "Location 1",
-        location: "10st & Lincoln Ave",
-        date: "Jun 5",
-        time: "11 AM - 1:30 PM"
-      },
-      {
-        name: "Location 2",
-        location: "Glen Park Fountain",
-        date: "Jun 6",
-        time: "5 PM - 10 PM"
-      }
-    ]
     return c.json(events)
   }
 )
 
-// Add Swagger UI
-app.get('/swagger', swaggerUI({ url: '/doc' }))
+// Default route redirects to Swagger UI
+app.get('/', (c) => {
+  return c.redirect('/swagger')
+})
 
-// Generate OpenAPI documentation
-app.doc('/doc', {
+// Swagger UI route
+app.get('/swagger', swaggerUI({ url: '/openapi' }))
+
+
+// route to get generated raw OpenAPI json
+app.doc('/openapi', {
   openapi: '3.0.0',
   info: {
     title: 'Web Design Contest API',
