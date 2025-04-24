@@ -1,44 +1,26 @@
 export const events = [
   {
-    name: "Food Truck Lunch",
-    location: "58th & Ellis (U of C)",
-    date: "Jun 20",
-    time: "11 AM - 1:30 PM"
+    name: "I Know You Like A Book",
+    location: "4707 N Prospect Rd, Peoria Heights",
+    date: "Aug 3rd",
+    time: "6 PM - 7 PM"
   },
   {
-    name: "Ravina District Food Truck Thursday",
-    location: "Dean Ave between Roger Williams & St John",
-    date: "Jun 20",
+    name: "The Book Nook",
+    location: "6944 N University St, Peoria",
+    date: "Sept 7th",
     time: "6 PM - 9 PM"
   },
   {
-    name: "Food Truck Lunch",
-    location: "Wacker & Adams",
-    date: "Jun 21",
-    time: "11 AM - 6:30 PM"
+    name: "Lit. on Fire Used Books",
+    location: "712 W Main St, Peoria",
+    date: "Oct 5th",
+    time: "12 PM - 1 PM"
   },
   {
-    name: "Winnetka Music Festival",
-    location: "Village of Winnetka",
-    date: "Jun 21",
-    time: "5 PM - 10 PM"
-  },
-  {
-    name: "Winnetka Music Festival",
-    location: "Village of Winnetka",
-    date: "Jun 22",
-    time: "11 AM - 10 PM"
-  },
-  {
-    name: "Food Truck Fest",
-    location: "2400 S. State St",
-    date: "Jun 23",
-    time: "11 AM - 7 PM"
-  },
-  {
-    name: "Food Truck Fest",
-    location: "1600 Wabash Ave",
-    date: "Jun 24",
-    time: "11 AM - 7 PM"
+    name: "Book Rack Used Books",
+    location: "408 N Knoxville Ave #2B, Peoria",
+    date: "Nov 5th",
+    time: "5 PM - 7 PM"
   }
 ] 
