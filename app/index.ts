@@ -2,9 +2,18 @@ import { Hono } from 'hono'
 import { OpenAPIHono, z } from '@hono/zod-openapi'
 import { swaggerUI } from '@hono/swagger-ui'
 import { events } from './data/events'
+import { cors } from 'hono/cors'
 
 // Create a new Hono app with OpenAPI support
 const app = new OpenAPIHono()
+
+// Add CORS middleware
+app.use('*', cors({
+  origin: '*',
+  allowMethods: ['GET', 'OPTIONS'],
+  allowHeaders: ['Content-Type'],
+  maxAge: 600,
+}))
 
 // Define the Event schema
 const EventSchema = z.object({
