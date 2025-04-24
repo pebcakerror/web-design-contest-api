@@ -19,7 +19,7 @@ app.use('*', cors({
 const EventSchema = z.object({
   name: z.string().openapi({
     description: 'The name of the event',
-    example: 'Food Truck Lunch'
+    example: 'A Bookstore'
   }),
   location: z.string().openapi({
     description: 'The human friendly location of the event',
