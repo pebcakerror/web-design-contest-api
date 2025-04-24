@@ -9,14 +9,14 @@
     "build": "tsc"
   },
   "dependencies": {
-    "hono": "^3.12.0",
-    "@hono/zod-openapi": "^0.9.0",
     "@hono/swagger-ui": "^0.1.0",
+    "@hono/zod-openapi": "^0.9.0",
+    "hono": "^3.12.0",
     "zod": "^3.22.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240208.0",
     "typescript": "^5.0.0",
-    "wrangler": "^3.0.0"
+    "wrangler": "^4.13.0"
   }
 }
