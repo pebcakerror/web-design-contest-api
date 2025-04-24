@@ -1,24 +1,22 @@
 {
-  "name": "webdesigncontest-api",
-  "version": "0.0.1",
-  "description": "Simple Rest API for WebProfessionals.org Web Design & Development Contest",
-  "repository": "https://github.com/pebcakerror/web-design-contest-api",
-  "homepage": "https://www.webdesigncontest.org",
-  "main": "app/index.js",
+  "name": "web-design-contest-api",
+  "version": "1.0.0",
+  "description": "API for WebProfessionals.org Web Design & Development Contest",
+  "type": "module",
   "scripts": {
-    "start": "node app/index.js",
-    "dev": "nodemon app/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "generatedocs": "apidoc -i app/ -o app/public/"
+    "dev": "wrangler dev app/index.ts",
+    "deploy": "wrangler deploy app/index.ts",
+    "build": "tsc"
   },
-  "author": "Jonathan Worent <jonathan@inspiredbytes.net>",
-  "license": "MIT",
   "dependencies": {
-    "express": "^5.1.0",
-    "express-rate-limit": "^7.5.0"
+    "@hono/swagger-ui": "^0.1.0",
+    "@hono/zod-openapi": "^0.9.0",
+    "hono": "^3.12.0",
+    "zod": "^3.22.0"
   },
   "devDependencies": {
-    "apidoc": "^1.2.0",
-    "nodemon": "^3.1.10"
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^4.13.0"
   }
 }
