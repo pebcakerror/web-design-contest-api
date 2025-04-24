@@ -22,23 +22,13 @@ app.openapi(
     method: 'get',
     tags: ['Events'],
     summary: 'Get upcoming events',
-    description: 'Returns a list of upcoming events. Rate limited to 50 requests per minute per IP address.',
+    description: 'Returns a list of upcoming events.',
     responses: {
       200: {
         description: 'List of events',
         content: {
           'application/json': {
             schema: z.array(EventSchema)
-          }
-        }
-      },
-      429: {
-        description: 'Rate limit exceeded',
-        content: {
-          'application/json': {
-            schema: z.object({
-              message: z.string()
-            })
           }
         }
       }
