@@ -4,8 +4,8 @@
   "description": "API for WebProfessionals.org Web Design & Development Contest",
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy src/index.ts",
+    "dev": "wrangler dev app/index.ts",
+    "deploy": "wrangler deploy app/index.ts",
     "build": "tsc"
   },
   "dependencies": {
