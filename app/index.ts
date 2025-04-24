@@ -13,7 +13,7 @@ const EventSchema = z.object({
     example: 'Food Truck Lunch'
   }),
   location: z.string().openapi({
-    description: 'The location of the event',
+    description: 'The human friendly location of the event',
     example: '58th & Ellis (U of C)'
   }),
   date: z.string().openapi({
