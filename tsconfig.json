@@ -7,7 +7,9 @@
     "strict": true,
     "lib": ["ES2020"],
     "types": ["@cloudflare/workers-types"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": "app"
   },
   "include": ["app/**/*"]
 } 

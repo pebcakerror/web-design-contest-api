@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "wrangler dev app/index.ts",
-    "deploy": "wrangler deploy app/index.ts",
+    "deploy": "wrangler deploy dist/index.js",
     "build": "tsc"
   },
   "dependencies": {
