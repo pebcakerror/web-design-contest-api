@@ -1,0 +1,20 @@
+{
+  "name": "web-design-contest-api",
+  "main": "dist/index.js",
+  "compatibility_date": "2024-02-20",
+  "build": {
+    "command": "npm run build",
+    "watch_dir": "app",
+    "upload": {
+      "format": "modules",
+      "main": "./dist/index.js",
+      "dir": "dist"
+    }
+  },
+  "build.upload.rules": [
+    {
+      "type": "ESModule",
+      "globs": ["**/*.js"]
+    }
+  ]
+} 
