@@ -1,7 +1,15 @@
 const express = require('express');
 const events = require('./data/events');
+const rateLimit = require('express-rate-limit');
 
 const server = express();
+
+// Create a limiter that allows 50 requests per minute
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 50, // Limit each IP to 50 requests per minute
+  message: 'Too many requests from this IP, please try again after a minute'
+});
 
 server.use(express.static(`${__dirname}/public`));
 
@@ -15,6 +23,9 @@ server.use(function(req, res, next) {
  * @api {get} /events Get upcomming Events
  * @apiName getEvents
  * @apiGroup Events
+ *
+ * @apiDescription Returns a list of upcoming events. Rate limited to 50 requests per minute per IP address.
+ * If the rate limit is exceeded, the API will return a 429 status code with an error message.
  *
  * @apiExample fetch() Example:
  * fetch('http://localhost:60606/events')
@@ -43,6 +54,14 @@ server.use(function(req, res, next) {
  * @apiSuccess {String}     response.date               Date (as a preformated string)
  * @apiSuccess {String}     response.time               Time (as a preformated string)
  *
+ * @apiError (Error 429) {String} message               Rate limit exceeded message
+ *
+ * @apiErrorExample {json} Error-Response:
+ *     HTTP/1.1 429 Too Many Requests
+ *     {
+ *       "message": "Too many requests from this IP, please try again after a minute"
+ *     }
+ *
  * @apiSuccessExample Success-Response:
  *    HTTP/1.1 200 OK
  *    [
@@ -65,6 +84,7 @@ function getEvents(req, res) {
   res.send(events);
 }
 
-server.get('/events', getEvents);
+// Apply rate limiting to the /events route
+server.get('/events', limiter, getEvents);
 
 server.listen(60606, () => console.log('listening on port 60606'));
