@@ -3,6 +3,9 @@ import { OpenAPIHono, z } from '@hono/zod-openapi'
 import { swaggerUI } from '@hono/swagger-ui'
 import { events } from './data/events'
 import { cors } from 'hono/cors'
+import { renderToString } from 'react-dom/server'
+import HomePage from './components/HomePage'
+import React from 'react'
 
 // Create a new Hono app with OpenAPI support
 const app = new OpenAPIHono()
@@ -59,9 +62,23 @@ app.openapi(
   }
 )
 
-// Default route redirects to Swagger UI
+// Default route serves React page
 app.get('/', (c) => {
-  return c.redirect('/swagger')
+  const html = `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Design Contest API</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
+      <body>
+        <div id="root">${renderToString(React.createElement(HomePage))}</div>
+      </body>
+    </html>
+  `
+  return c.html(html)
 })
 
 // Swagger UI route
