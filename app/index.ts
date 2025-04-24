@@ -29,7 +29,7 @@ const EventSchema = z.object({
 // Define the API routes with OpenAPI documentation
 app.openapi(
   {
-    path: '/api/events',
+    path: '/events',
     method: 'get',
     tags: ['Events'],
     summary: 'Get upcoming events',
@@ -69,8 +69,8 @@ app.doc('/openapi', {
   },
   servers: [
     {
-      url: 'http://localhost:8787',
-      description: 'Development server'
+      url: 'https://contest.worent.com/',
+      description: 'Production server'
     }
   ]
 })
